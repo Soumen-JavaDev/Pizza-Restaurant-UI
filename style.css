@@ -1,0 +1,385 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background-color: black !important;
+    color: #fff !important;
+
+}
+
+/* Styling the Header and Nav */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 65px;
+    z-index: 1000;
+    box-shadow: 0px 0px 2px 0px rgb(201, 199, 188);
+}
+
+.nav-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+        display: flex;
+
+        gap: 1rem;
+
+        li {
+            list-style: none;
+            font-size: 16px;
+            padding: 10px;
+            border-bottom: 3px solid rgb(0, 0, 0);
+
+            &:hover {
+                border-bottom: 3px solid #b11a7c;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    padding-right: 20px;
+
+    i {
+        font-size: 18px;
+        color: white;
+
+        &:hover {
+            color: #b11a7c;
+        }
+    }
+}
+
+/* Hamburger Menu Icon for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+
+/* Responsive Layout: Mobile View */
+@media (max-width: 1024px) {
+    .nav-links {
+
+        position: absolute;
+        top: 65px;
+        right: 0;
+        height: 100vh;
+        width: 200px;
+        background-color: #333;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    .nav-links.open {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.pexels.com/photos/17402714/pexels-photo-17402714/free-photo-of-woman-hand-holding-slice-of-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+
+    @media(max-width: 768px) {
+        height: 80vh;
+    }
+
+
+}
+
+.hero-container {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    align-items: center;
+}
+
+.hero-text {
+    color: #fff;
+    max-width: 400px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+
+    .hero-titel {
+        font-weight: 700;
+        font-size: clamp(34px, 5vw, 55px);
+        border-bottom: 10px solid rgb(237, 21, 68);
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+    }
+}
+
+
+
+
+/* about us  */
+
+
+
+.heading {
+
+    margin: auto;
+    width: 250px;
+    text-transform: uppercase;
+    border-bottom: 5px solid rgb(212, 11, 125);
+    font-weight: 500;
+    padding: 20px 0px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+.about-contain {
+    display: flex;
+
+    .about-text {
+        width: 50%;
+        margin: 10px;
+        border-top: 4px solid red;
+        padding-top: 20px;
+    }
+
+    .about-image {
+        width: 50%;
+        padding: 20px;
+    }
+
+    @media(max-width: 768px) {
+
+        flex-direction: column;
+
+        .about-image {
+            width: 100%;
+            order: 1;
+        }
+
+        .about-text {
+            width: 100%;
+            order: 2;
+
+        }
+    }
+}
+
+
+
+.item-heading {
+
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(146, 146, 20)
+}
+
+.item-contener {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+
+        width: 50%;
+        display: flex;
+        padding-bottom: 30px;
+
+        .item-image {
+            width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .item-text {
+            width: 50%;
+            padding-left: 10px;
+            line-height: 30px;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .item-contener {
+        width: 100%;
+
+        .item {
+            width: 100%;
+            margin: 10px;
+            flex-direction: column;
+
+            .item-image {
+                width: 100%;
+                display: flex;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .item-text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* gallary  */
+
+
+.gallary-container1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 500px;
+    gap: 8px;
+
+}
+
+.gallary-container2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 8px;
+    height: 500px;
+}
+
+.gallary-container3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* General Styling for the Footer */
+
+
+
+.find-us {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.contact-info {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.map {
+    width: 48%;
+}
+
+iframe {
+    border-radius: 8px;
+}
+
+@media(max-width:1024px) {
+    .contact-info {
+        width: 100%;
+    }
+
+    .map {
+        width: 100%;
+    }
+}
+
+/* Styling the row */
+.contact-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+   
+}
+
+
+.shap-icon img {
+    height: 200px;
+    object-fit: contain;
+}
+
+
+
+
+.contact-details .email,
+.contact-details .phone {
+    display: flex;
+    gap: 10px;
+}
